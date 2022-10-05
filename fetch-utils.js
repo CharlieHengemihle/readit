@@ -27,3 +27,36 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createPost(post) {
+    return await client.from('readit').insert(post);
+}
+
+export async function getPosts() {
+    return await client.from('readit').select('*');
+}
+
+export async function getPost(id) {
+    return await client.from('readit')
+    .select(`*, comments(*)`)
+    .eq('id', id)
+    .order('created_at', { foreignTable: 'comments', ascending: false })
+    .single();
+}
+
+export async function uploadImage(bucketName, imagePath, imageFile) {
+
+    const bucket = client.storage.from(bucketName);
+
+    const response = await bucket.upload(imagePath, imageFile, {
+        cacheControl: '3600',
+        upsert: true,
+    });
+
+    if (response.error) {
+        // console.log(response.error);
+        return null;
+    }
+
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
+    return url;
+}
