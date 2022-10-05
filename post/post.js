@@ -1,4 +1,4 @@
-import '../auth/users.js';
+import '../auth/user.js';
 import { getPost } from '../fetch-utils.js';
 
 
@@ -19,14 +19,26 @@ window.addEventListener('load', async () => {
     error = response.error;
     post = response.data;
     
+    if (error) {
+        displayError();
+    } else {
+        displayPost();
+    }
 })
 
 function displayError() {
     if (error) {
         // eslint-disable-next-line no-console
-        console.log(error);
+        // console.log(error);
         errorDisplay.textContent = error.message;
     } else {
         errorDisplay.textContent = '';
     }
+}
+
+function displayPost() {
+    postTitle.textContent = post.title;
+    postBody.textContent= post.body;
+    postImage.src = post.image;
+    postImage.alt = `${post.title} image`;
 }

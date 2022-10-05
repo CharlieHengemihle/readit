@@ -5,7 +5,7 @@ export function renderPost(post) {
     a.href = `/post/?id=${post.id}`;
 
     const img = document.createElement('img');
-    img.src = post.image_url;
+    img.src = post.image;
 
     const h2 = document.createElement('h2');
     h2.textContent = post.title;

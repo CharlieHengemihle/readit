@@ -2,7 +2,7 @@ import '../auth/user.js';
 import { createPost, uploadImage } from '../fetch-utils.js';
 
 const postForm = document.getElementById('post-form');
-const errorDispaly = document.getElementById('error-display');
+const errorDisplay = document.getElementById('error-display');
 const imageInput = document.getElementById('image-input');
 const preview = document.getElementById('preview');
 
