@@ -18,9 +18,13 @@ form:not(.inline) {
     background: white;
 }
 
+.post img {
+    max-height: 500px;
+    max-width: 500px;
+}
 
 label {
-    font-family: 'Titillium Web';
+    font-family: 'cursive';
     font-size: 0.9em;
     font-weight: bold;
     color: var(--label-color);

@@ -9,7 +9,7 @@
 
     <!-- title and favicon -->
     <title>Read It!</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/alchemy-favicon.png" />
 
     <!-- js -->
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -48,6 +48,15 @@
             <img id="post-image" alt="post image" src="../assets/placeholder.jpg">
             <p id="post-body"></p>
         </section>
+
+        <section>
+            <form id="add-comment-form" class="inline">
+                <input name="text" placeholder="Got anything to say for yourself?">
+                <button>Spill the Tea</button>
+            </form>
+        </section>
+
+        <ul id="comment-list"></ul>
 
 
     </main>

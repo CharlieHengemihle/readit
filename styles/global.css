@@ -7,8 +7,8 @@
     --offset-color: rgb(217, 236, 217);
     --action-color: rgb(77, 132, 252);
 
-    --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
-        'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
+    --primary-font: 'cursive', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
+        'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', 'Verdana Ref', sans-serif;
 }
 
 body {

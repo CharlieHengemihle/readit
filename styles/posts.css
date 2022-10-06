@@ -6,6 +6,17 @@ main {
     color: red;
 }
 
+.post {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 30px 60px;
+
+    column-gap: 20px;
+    background: var(--offset-color);
+    box-shadow: var(--box-shadow);
+}
+
+
 #post-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));

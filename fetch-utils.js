@@ -36,10 +36,11 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-    return await client.from('readit')
-    .select('*')
+    return await client
+    .from('readit')
+    .select(`*, comments (*)`)
     .eq('id', id)
-    // .order('created_at', { foreignTable: 'comments', ascending: false })
+    .order('created_at', { foreignTable: 'comments', ascending: false })
     .single();
 }
 
@@ -59,4 +60,8 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 
     const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
     return url;
+}
+
+export async function createComment(comment) {
+    return await client.from('comments').insert(comment).single();
 }
