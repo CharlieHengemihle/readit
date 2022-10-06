@@ -36,7 +36,7 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-        return await client
+    return await client
         .from('readit')
         .select(`*, comments (*)`)
         .eq('id', id)
