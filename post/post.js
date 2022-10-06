@@ -25,12 +25,12 @@ window.addEventListener('load', async () => {
         displayError();
     }
     if (!post) {
-        location.assign('../')
+        location.assign('../');
     } else {
         displayPost();
         displayComments();
     }
-})
+});
 
 addCommentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -49,15 +49,12 @@ addCommentForm.addEventListener('submit', async (e) => {
     } else {
         addCommentForm.reset();
         post.comments.unshift(comment);
-        console.log(comment);
         displayComments();
     }
 });
 
 function displayError() {
     if (error) {
-        // eslint-disable-next-line no-console
-        // console.log(error);
         errorDisplay.textContent = error.message;
     } else {
         errorDisplay.textContent = '';
@@ -66,7 +63,7 @@ function displayError() {
 
 function displayPost() {
     postTitle.textContent = post.title;
-    postBody.textContent= post.body;
+    postBody.textContent = post.body;
     postImage.src = post.image;
     postImage.alt = `${post.title} image`;
 }

@@ -36,12 +36,12 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-    return await client
-    .from('readit')
-    .select(`*, comments (*)`)
-    .eq('id', id)
-    .order('created_at', { foreignTable: 'comments', ascending: false })
-    .single();
+        return await client
+        .from('readit')
+        .select(`*, comments (*)`)
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
+        .single();
 }
 
 export async function uploadImage(bucketName, imagePath, imageFile) {
@@ -54,7 +54,6 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
     });
 
     if (response.error) {
-        // console.log(response.error);
         return null;
     }
 

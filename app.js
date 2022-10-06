@@ -30,7 +30,6 @@ window.addEventListener('load', async () => {
 /* Display Functions */
 function displayPosts() {
     postList.innerHTML = '';
-
     for (const post of posts) {
         const postEl = renderPost(post);
         postList.append(postEl);
@@ -39,8 +38,6 @@ function displayPosts() {
 
 function displayError() {
     if (error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
         errorDisplay.textContent = error.message;
     } else {
         errorDisplay.textContent = '';
