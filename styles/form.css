@@ -10,8 +10,21 @@ form:not(.inline) {
     gap: 20px;
 }
 
+.preview {
+    height: 128px;
+    width: 128px;
+    object-fit: cover;
+    border: 1px solid var(--placeholder-color);
+    background: white;
+}
+
+.post img {
+    max-height: 500px;
+    max-width: 500px;
+}
+
 label {
-    font-family: 'Titillium Web';
+    font-family: 'cursive';
     font-size: 0.9em;
     font-weight: bold;
     color: var(--label-color);
